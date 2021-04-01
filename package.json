@@ -1,7 +1,12 @@
 {
-  "name": "designsystem",
+  "name": "@wendelfreitas/design-system",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Design System tutorial",
+  "main": "dist/index.js",
+  "repository": "git@github.com:wendelfreitas/design-system.git",
+  "author": "Wendel Freitas <wendelfreitasbranco@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -21,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist --extensions .ts,.tsx",
     "lint": "eslint src --max-warnings=0",
     "tsc": "tsc --skipLibCheck",
     "test": "react-scripts test --collectCoverageFrom=!src/**/*.stories.tsx",
@@ -29,6 +34,16 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -72,6 +87,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.14",
     "@storybook/addon-a11y": "^6.2.1",
     "@storybook/addon-actions": "^6.2.1",
     "@storybook/addon-essentials": "^6.2.1",
@@ -82,6 +98,8 @@
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
+    "auto": "^10.24.1",
+    "cross-env": "^7.0.3",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
