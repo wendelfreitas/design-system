@@ -23,6 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint src --max-warnings=0",
+    "tsc": "tsc --skipLibCheck",
     "test": "react-scripts test --collectCoverageFrom=!src/**/*.stories.tsx",
     "test:coverage": "yarn test --coverage ",
     "eject": "react-scripts eject",
@@ -71,6 +72,7 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^6.2.1",
     "@storybook/addon-actions": "^6.2.1",
     "@storybook/addon-essentials": "^6.2.1",
     "@storybook/addon-links": "^6.2.1",

@@ -1,0 +1,32 @@
+name: CI
+
+on: pull_request
+
+jobs:
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Set up Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1
+
+    - name: Run TypeScript
+      run: yarn tsc
+
+    - name: Run ESLint
+      run: yarn lint
+
+    - name: Run Tests with Coverage
+      run: yarn test --coverage
+
+    - name: Upload coverage to Codecov
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      run: bash <(curl -s https://codecov.io/bash)
