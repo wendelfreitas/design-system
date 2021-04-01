@@ -1,6 +1,6 @@
-import React from "react";
-import * as S from "./styles";
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import React from 'react';
+import * as S from './styles';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
 type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
@@ -10,12 +10,12 @@ export type ButtonProps = {
   /**
    * Can be set to primary or secondary
    */
-  type?: "primary";
+  type?: 'primary';
 
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large";
+  size?: 'small' | 'medium' | 'large';
   /**
    * In the case of the button, have the maximum size of the container
    */
@@ -46,8 +46,8 @@ export type ButtonProps = {
 const Button = ({
   children,
   icon,
-  type = "primary",
-  size = "medium",
+  type = 'primary',
+  size = 'medium',
   htmlType,
   disabled = false,
   loading = false,
@@ -65,7 +65,7 @@ const Button = ({
       {...props}
     >
       {loading ? <S.Loading size={15} /> : icon}
-      {!!children && <span>{children}</span>}
+      {!!children && <span>{children}teste</span>}
     </S.Wrapper>
   );
 };
