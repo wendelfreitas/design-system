@@ -1,6 +1,8 @@
 # v0.1.1 (Thu Apr 01 2021)
 
-- Created first version of the design system, with `Button` component.
+#### ⚠️ Pushed to `master`
+
+- chore: fix chromatic token ([@wendelfreitas](https://github.com/wendelfreitas))
 
 #### Authors: 1
 
