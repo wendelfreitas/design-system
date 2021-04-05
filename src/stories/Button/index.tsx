@@ -65,7 +65,7 @@ const Button = ({
       {...props}
     >
       {loading ? <S.Loading size={15} /> : icon}
-      {!!children && <span>{children} CI TEST</span>}
+      {!!children && <span>{children} FINAL TEST</span>}
     </S.Wrapper>
   );
 };
